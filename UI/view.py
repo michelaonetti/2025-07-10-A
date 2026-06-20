@@ -22,6 +22,8 @@ class View(ft.UserControl):
         self.btn_hello = None
         self.txt_result = None
         self.txt_container = None
+        self._dp1 =""
+        self._dp2 = ""
 
     def load_interface(self):
         # title
@@ -29,6 +31,7 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         self._ddcategory = ft.Dropdown(label="Category", width=200)
+        self._controller.loadCategory(self._ddcategory)
 
         self._dp1 = ft.DatePicker(
             on_change=lambda e: print(f"Giorno selezionato: {self._dp1.value}"),
